@@ -5,12 +5,12 @@ const iconMap = { Github, Linkedin, Instagram, Mail } as const
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-primary px-12 py-10">
-      <div className="flex items-center justify-between">
+    <footer className="border-primary w-full border-t px-12 py-10">
+      <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
         {/* Left — Name */}
-        <div>
+        <div className="text-center sm:text-left">
           <p className="text-sm font-semibold">Hasbiy Robbiy</p>
-          <p className="text-xs text-muted-foreground">Software Developer</p>
+          <p className="text-muted-foreground text-xs">Software Developer</p>
         </div>
 
         {/* Middle — Icon row */}
@@ -24,7 +24,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-muted-foreground transition-colors hover:text-foreground"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Icon className="size-4" />
               </a>
@@ -33,9 +33,9 @@ export default function Footer() {
         </div>
 
         {/* Right — Location */}
-        <div className="text-right">
-          <p className="text-xs text-muted-foreground">Based in Indonesia</p>
-          <p className="text-xs text-muted-foreground">Available to work remotely</p>
+        <div className="text-center sm:text-right">
+          <p className="text-muted-foreground text-xs">Based in Indonesia</p>
+          <p className="text-muted-foreground text-xs">Available to work remotely</p>
         </div>
       </div>
     </footer>

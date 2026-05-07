@@ -1,6 +1,6 @@
 import { useRef } from 'react'
-import type { CSSProperties } from 'react'
-import { motion, useScroll, useTransform } from 'motion/react'
+import type { CSSProperties, RefObject } from 'react'
+import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
 
 interface ParallaxImageProps {
   src: string
@@ -16,6 +16,7 @@ interface ParallaxImageProps {
   /** Noise opacity (0–1) */
   noiseOpacity?: number
   className?: string
+  containerRef?: RefObject<HTMLElement | null>
 }
 
 function NoiseFilter({ id }: { id: string }) {
@@ -43,13 +44,17 @@ export default function ParallaxImage({
   noise = false,
   noiseOpacity = 0.15,
   className,
+  containerRef,
 }: ParallaxImageProps) {
   const filterId = useRef(`noise-${Math.random().toString(36).slice(2, 9)}`)
-  const { scrollY } = useScroll()
-  const y = useTransform(scrollY, [0, scrollRange], [0, yOffset], {
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start'],
+  })
+  const y = useTransform(scrollYProgress, [0, containerRef ? 1 : scrollRange], [0, yOffset], {
     clamp: false,
   })
-  const scale = useTransform(scrollY, [0, scrollRange], scaleRange, {
+  const scale = useTransform(scrollYProgress, [0, 1], scaleRange, {
     clamp: false,
   })
 

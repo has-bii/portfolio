@@ -4,17 +4,17 @@ import { Badge } from '@/components/ui/badge'
 export default function Services() {
   return (
     <section id="services" className="w-full px-12 py-16">
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid gap-8 lg:grid-cols-3">
         {/* Title */}
         <div>
-          <h2 className="font-heading inline-flex items-end gap-12 text-5xl font-medium">
-            <span className="text-3xl">02</span>
+          <h2 className="font-heading inline-flex items-end gap-6 text-3xl font-medium whitespace-nowrap lg:gap-12 lg:text-5xl">
+            <span className="text-xl lg:text-3xl">02</span>
             Services
           </h2>
         </div>
 
         {/* Content */}
-        <div className="col-span-2 space-y-8">
+        <div className="space-y-8 lg:col-span-2">
           {services.map((service) => (
             <div key={service.title} className="space-y-2">
               <h3 className="text-lg font-semibold">{service.title}</h3>

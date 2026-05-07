@@ -3,11 +3,11 @@ import { ArrowUpRight } from 'lucide-react'
 export default function AboutMe() {
   return (
     <section id="about" className="w-full px-12 py-16">
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid gap-8 lg:grid-cols-3">
         {/* Title */}
         <div>
-          <h2 className="font-heading inline-flex items-end gap-12 text-5xl font-medium">
-            <span className="text-3xl">01</span>
+          <h2 className="font-heading inline-flex items-end gap-6 text-3xl font-medium whitespace-nowrap lg:gap-12 lg:text-5xl">
+            <span className="text-xl lg:text-3xl">01</span>
             About Me
           </h2>
         </div>

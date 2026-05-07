@@ -20,7 +20,6 @@ function Home() {
       <Separator />
       <SelectedWork />
       <Separator />
-      <Separator />
       <CTA />
       <Separator />
       <Footer />
