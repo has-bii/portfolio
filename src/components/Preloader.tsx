@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { preloadImages, preloadRouteChunks } from '@/data/preload'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyRouter = any
 
 interface PreloaderProps {
@@ -44,7 +43,7 @@ export function Preloader({ onComplete, router }: PreloaderProps) {
             {progress}%
           </motion.p>
 
-          <div className="bg-border mt-4 h-[2px] w-48 overflow-hidden rounded-full">
+          <div className="bg-border mt-4 h-0.5 w-48 overflow-hidden rounded-full">
             <motion.div
               className="bg-foreground h-full"
               initial={{ width: 0 }}
