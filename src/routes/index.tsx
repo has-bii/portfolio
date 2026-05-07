@@ -1,7 +1,6 @@
 import AboutMe from '@/components/home/AboutMe'
 import CTA from '@/components/home/CTA'
 import Hero from '@/components/home/Hero'
-import NavBar from '@/components/home/NavBar'
 import SelectedWork from '@/components/home/SelectedWork'
 import Services from '@/components/home/Services'
 import Footer from '@/components/Footer'
@@ -13,7 +12,6 @@ export const Route = createFileRoute('/')({ component: Home })
 function Home() {
   return (
     <>
-      <NavBar />
       <Hero />
       <Separator />
       <AboutMe />
