@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge'
 
 export default function Services() {
   return (
-    <section className="w-full px-12 py-16">
+    <section id="services" className="w-full px-12 py-16">
       <div className="grid grid-cols-3 gap-8">
         {/* Title */}
         <div>

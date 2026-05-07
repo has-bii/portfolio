@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 export default function AboutMe() {
   return (
-    <section className="w-full px-12 py-16">
+    <section id="about" className="w-full px-12 py-16">
       <div className="grid grid-cols-3 gap-8">
         {/* Title */}
         <div>

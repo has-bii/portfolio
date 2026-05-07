@@ -10,7 +10,7 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <main className="no-scrollbar! relative w-screen overflow-x-hidden">
+    <main className="no-scrollbar! relative w-screen">
       <ReactLenis root />
       <Outlet />
     </main>
