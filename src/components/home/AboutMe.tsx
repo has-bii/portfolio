@@ -1,6 +1,25 @@
 import { ArrowUpRight } from 'lucide-react'
+import { AnimatePresence, motion } from 'motion/react'
+import { useCallback, useEffect, useState } from 'react'
+
+const images = ['/me-1.jpeg', '/me-2.jpeg', '/me-3.jpeg', '/me-4.jpeg', '/me-5.jpeg', '/me-6.jpeg']
 
 export default function AboutMe() {
+  const [currentImage, setCurrentImage] = useState(0)
+
+  const nextImage = useCallback(
+    () => setCurrentImage((prev) => (prev + 1) % images.length),
+    [],
+  )
+
+  const [isPaused, setIsPaused] = useState(false)
+
+  useEffect(() => {
+    if (isPaused) return
+    const timer = setInterval(nextImage, 3000)
+    return () => clearInterval(timer)
+  }, [isPaused, nextImage])
+
   return (
     <section id="about" className="w-full px-12 py-16">
       <div className="grid gap-8 lg:grid-cols-3">
@@ -41,12 +60,24 @@ export default function AboutMe() {
         </div>
 
         {/* Image */}
-        <div className="relative aspect-square w-full">
-          <img
-            src="/me.jpg"
-            alt=""
-            className="absolute inset-0 size-full object-cover object-center"
-          />
+        <div
+          className="relative aspect-square w-full"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <AnimatePresence>
+            <motion.img
+              key={currentImage}
+              src={images[currentImage]}
+              alt=""
+              className="absolute inset-0 size-full cursor-pointer object-cover object-center"
+              initial={{ opacity: 0, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, filter: 'blur(10px)' }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              onClick={nextImage}
+            />
+          </AnimatePresence>
         </div>
       </div>
     </section>
