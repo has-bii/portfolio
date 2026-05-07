@@ -15,14 +15,14 @@ export default function AboutMe() {
         {/* Content */}
         <div className="space-y-8 text-justify tracking-wide">
           <p>
-            I'm Hasbii. Spend most of my time building with React and Typescript. Lately, focusing
-            on AI Engineering. I love creating systems that aren't just functional, but gives life a
-            better experience.
+            I'm Hasbii. I spend most of my time building with React and TypeScript. Lately, I've
+            been diving into AI Engineering. I love creating systems that don't just work. They make
+            life a little easier.
           </p>
 
           <p>
-            Currently, I'm <strong>shipping</strong> my first SaaS. An expense tracker, that not
-            waiting users to input their expenses manually,&nbsp;
+            Right now, I'm <strong>shipping</strong> my first SaaS: an expense tracker that doesn't
+            make you manually log every transaction,&nbsp;
             <a
               href="https://waitlist.kashin.id"
               className="inline-flex items-center gap-0.5 font-semibold"
@@ -34,8 +34,8 @@ export default function AboutMe() {
           </p>
 
           <p>
-            I'm early in my career, but serious about craft. I'm actively building, shipping, and
-            learning, and I'm looking for environments where design and engineering share a common
+            Early in my career, but serious about craft. I'm constantly building, shipping, and
+            learning. I'm looking for environments where design and engineering speak the same
             language.
           </p>
         </div>

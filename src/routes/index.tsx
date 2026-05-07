@@ -1,5 +1,6 @@
 import AboutMe from '@/components/home/AboutMe'
 import Hero from '@/components/home/Hero'
+import Services from '@/components/home/Services'
 import { Separator } from '@/components/ui/separator'
 import { createFileRoute } from '@tanstack/react-router'
 
@@ -12,6 +13,7 @@ function Home() {
       <Separator />
       <AboutMe />
       <Separator />
+      <Services />
     </>
   )
 }
