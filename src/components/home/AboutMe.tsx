@@ -76,6 +76,7 @@ export default function AboutMe() {
               exit={{ opacity: 0, filter: 'blur(10px)' }}
               transition={{ duration: 0.5, ease: 'easeInOut' }}
               onClick={nextImage}
+              draggable="false"
             />
           </AnimatePresence>
         </div>
